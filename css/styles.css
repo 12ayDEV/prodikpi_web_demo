@@ -1,0 +1,161 @@
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scrollbar */
+}
+body { font-family: "Bai Jamjuree", 'Montserrat', 'Plus Jakarta Sans', 'JetBrains mono', monospace ,sans-serif; background-color: #F7F7F7; }
+.bg-main-color { background-color: #04D554; }
+.bg-brand-dark { background-color: #0F3D3E; }
+.bg-brand-green { background-color: #026F2C; }
+.text-brand-dark { color: #0F3D3E; }
+.text-brand-green { color: #026F2C; }
+.text-brand-light-green { color: #A4D0A4; }
+.border-brand-green { border-color: #1A5D1A; }
+.hover\:bg-brand-green-dark:hover { background-color: #014f1f; }
+.navbar-gradient { background: linear-gradient(to bottom, #026F2C, #23bd60ff);}
+.hero-gradient-overlay { background: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent);}
+
+/* === STYLES FOR EVENT BANNERS === */
+.event-banner-border-left {
+    background: linear-gradient(to right, #02772F, #04DD57);
+    opacity: 0.2;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+.event-banner-fill-left {
+    background: linear-gradient(to right, #02772F, #04DD57);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+.event-banner-border-right {
+    background: linear-gradient(to left, #02772F, #04DD57);
+    opacity: 0.2;
+    clip-path: polygon(0 90%, 100% 100%, 100% 0, 0 0);
+}
+.event-banner-fill-right {
+    background: linear-gradient(to left, #02772F, #04DD57);
+    clip-path: polygon(0 90%, 100% 100%, 100% 0, 0 0);
+}
+.event-card-banner-border {
+    background: linear-gradient(to right, #02772F, #04DD57, #02772F);
+    opacity: 0.2;
+}
+.event-card-banner-fill {
+    background: linear-gradient(to right, #02772F, #04DD57, #02772F);
+}
+
+/* === NEW STYLES FOR MEMBERS AND TESTIMONIES === */
+.members-gradient-bg { background: linear-gradient(to right, #02772F, #04DD57); }
+.testimonies-gradient-bg {
+    background: linear-gradient(to bottom,
+        #001609 0%,
+        #013d1aff 20%,
+        rgba(2, 66, 29, 0) 75%
+    );
+}
+
+.liquid-glass-card-dark {
+    background: rgba(15, 61, 62, 0.15); /* Dark green tint, from bg-brand-dark */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    border: 3px solid rgba(0, 22, 9, 0.4);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* === NEW STYLES FOR FOOTER AND NEWSLETTER === */
+.newsletter-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin-top: -150px; /* Add this line */
+}
+.newsletter-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+.newsletter-layer-1 {
+    background: linear-gradient(to bottom, #00C94F, #006327);
+    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%);
+    z-index: 1;
+}
+.newsletter-layer-2 {
+    background: linear-gradient(to left, #017C31, #001609);
+    opacity: 0.9;
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+    z-index: 2;
+}
+.newsletter-layer-3 {
+    background: linear-gradient(to left, #017C31, #001609);
+    opacity: 0.9;
+    clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+    top: 5px; /* Slight offset */
+    z-index: 3;
+}
+
+.member-banner {
+    background: linear-gradient(to right, #02772F, #04DD57);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 -7px 4px 3px rgba(0, 0, 0, 0.1), 0 -5px 4px -1px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #004d21;
+}
+.member-banner-bg-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: auto;
+    opacity: 0.1;
+    pointer-events: none;
+}
+#contact {
+    background: linear-gradient(to right, #02772F, #04DD57);
+}
+
+/* === STYLES FOR CUSTOM SCROLLBAR === */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(15, 61, 62, 0.1); /* Light gray track */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #026F2C; /* Brand green handle */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #014f1f; /* Darker green on hover */
+}
+
+/* === STYLES FOR LANGUAGE TOGGLE === */
+.lang-toggle {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+.lang-toggle:hover {
+    opacity: 1;
+}
+.lang-toggle.lang-active {
+    opacity: 1;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+.hidden-lang {
+    display: none !important;
+}
+
+/* === LANGUAGE VISIBILITY RULES === */
+/* Hide the non-selected language by default */
+html.lang-en [lang="id"],
+html.lang-id [lang="en"] {
+    display: none;
+}
