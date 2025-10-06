@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRODIKPI</title>
+    
+    <!-- Pre-emptive script to prevent language flash and freeze -->
+    <script>
+        (function() {
+            const lang = localStorage.getItem('preferredLanguage') || 'en';
+            document.documentElement.className = 'lang-' + lang;
+        })();
+    </script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="text-gray-800">
+
+    <header class="navbar-gradient sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center items-center h-[114px] relative space-x-16">
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/pages/aboutus.php" class="text-white hover:underline">About Us</a>
+                    <a href="/pages/our_members.php" class="text-white hover:underline">Our Members</a>
+                    <a href="/pages/program_activities.php" class="text-white hover:underline">Program & Activities</a>
+                </div>
+
+                <div class="flex justify-center items-stretch h-[114px] relative">
+                    <div class="flex-shrink-0">
+                        <div class="flex flex-col items-center h-full">
+                            <div class="bg-white w-24 flex-grow flex items-center justify-center p-2 shadow-lg">
+                                <a href="/index.php">
+                                    <img src="/assets/images/LogoPRODIKPI.png" alt="PRODIKPI Logo" class="w-full h-full object-contain">
+                                </a>
+                            </div>
+                            <a href="/pages/login.php" class="w-24 text-center text-sm font-bold bg-[#001609] text-white py-1 rounded-b-md drop-shadow-lg">LOG-IN</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/pages/news_articles.php" class="text-white hover:underline">News & Articles</a>
+                    <a href="/pages/publications.php" class="text-white hover:underline">Publications</a>
+                    <a href="/pages/contactus.php" class="text-white hover:underline">Contact Us</a>
+                </div>
+
+                <div class="absolute inset-y-0 left-0 flex items-center md:hidden">
+                    <button id="menu-toggle" class="inline-flex items-center justify-center p-2 rounded-md text-white">
+                        <svg id="icon-open" class="h-6 w-6 block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg id="icon-close" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="mobile-menu" class="md:hidden hidden bg-white/90 backdrop-blur-sm rounded-b-lg flex-col pt-4 pb-6 space-y-2 text-center transition-all duration-300 ease-in-out">
+                <a href="#about" class="block text-gray-800 hover:text-green-700">About Us</a>
+                <a href="#" class="block text-gray-800 hover:text-green-700">Our Members</a>
+                <a href="#" class="block text-gray-800 hover:text-green-700">Program & Activities</a>
+                <a href="#" class="block text-gray-800 hover:text-green-700">News & Articles</a>
+                <a href="#publications" class="block text-gray-800 hover:text-green-700">Publications</a>
+                <a href="#contact" class="block text-gray-800 hover:text-green-700">Contact Us</a>
+                <a href="#" class="block bg-black text-white py-2 rounded-md mt-2 mx-4">LOG-IN</a>
+            </div>
+        </div>
+    </header>

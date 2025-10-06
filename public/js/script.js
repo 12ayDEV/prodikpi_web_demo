@@ -1,19 +1,35 @@
 // ===================NAVBAR============================
 const navbar = document.getElementById("navbar");
+const logoNormal = document.getElementById("logo-normal");
+const logoWhite = document.getElementById("logo-white");
 
 window.addEventListener("scroll", () => {
   if (window.scrollY > 50) {
-    // Saat discroll, jadi transparan
+    // Scrolled state: glassmorphism effect and white logo
     navbar.classList.remove("bg-main-color");
-    navbar.classList.add("bg-main-color/50", "backdrop-blur-md");
+    navbar.classList.add("bg-[#026F2C]/50", "backdrop-blur-md");
+    logoNormal.classList.remove("opacity-100");
+    logoNormal.classList.add("opacity-0");
+    logoWhite.classList.remove("opacity-0");
+    logoWhite.classList.add("opacity-100");
   } else {
-    // Saat di atas, warna solid
-    navbar.classList.remove("bg-main-color/50", "backdrop-blur-md");
+    // Top state: solid gradient and normal logo
+    navbar.classList.remove("bg-[#026F2C]/50", "backdrop-blur-md");
     navbar.classList.add("bg-main-color");
+    logoNormal.classList.remove("opacity-0");
+    logoNormal.classList.add("opacity-100");
+    logoWhite.classList.remove("opacity-100");
+    logoWhite.classList.add("opacity-0");
   }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+  // ============== INITIALIZE AOS ANIMATIONS ==============
+  AOS.init({
+    duration: 800, // Animation duration in milliseconds
+    once: true,    // Whether animation should happen only once
+  });
+  
   // ============== INITIALIZE SWIPERS ==============
   window.memberSwiper = new Swiper(".swiper-member", {
     loop: true,
@@ -129,9 +145,29 @@ document.addEventListener("DOMContentLoaded", () => {
   if (menuToggle) {
     menuToggle.addEventListener("click", () => {
       mobileMenu.classList.toggle("hidden");
-      iconOpen.classList.toggle("hidden");
-      iconClose.classList.toggle("hidden");
+      if(iconOpen) iconOpen.classList.toggle("hidden");
+      if(iconClose) iconClose.classList.toggle("hidden");
     });
   }
   // ============== END MOBILE MENU ==============
+
+  // ============== LAZY LOADING IMAGES ==============
+  const lazyImages = document.querySelectorAll('.lazy-load');
+
+  const lazyLoad = (target) => {
+    const io = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          const src = img.getAttribute('data-src');
+          img.setAttribute('src', src);
+          img.classList.remove('lazy-load');
+          observer.disconnect();
+        }
+      });
+    });
+    io.observe(target);
+  }
+  lazyImages.forEach(lazyLoad);
+  // ============== END LAZY LOADING ==============
 });

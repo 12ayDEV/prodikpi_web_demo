@@ -15,87 +15,30 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet"> -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@200;400;600;700;800&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="css/styles.css">
 
 </head>
 <body class="text-gray-800">
-    <!-- ================= HEADER SECTION ================= -->
-
-    <!-- <header class="navbar-gradient sticky top-0 z-50 shadow-lg">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-center items-center h-[114px] relative space-x-16">
-                
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="../pages/aboutus.html" class="text-white hover:underline">About Us</a>
-                    <a href="../pages/our_members.html" class="text-white hover:underline">Our Members</a>
-                    <a href="../pages/program_activities.html" class="text-white hover:underline">Program & Activities</a>
-                </div>
-
-                <div class="flex justify-center items-stretch h-[114px] relative">
-                    <div class="flex-shrink-0">
-                        <div class="flex flex-col items-center h-full">
-                            <div class="bg-white w-24 flex-grow flex items-center justify-center p-2 shadow-lg">
-                                <a href="../public/index.html">
-                                    <img src="../public/assets/images/LogoPRODIKPI.png" alt="PRODIKPI Logo" class="w-full h-full object-contain">
-                                </a>
-                            </div>
-                            <a href="../pages/login.html" class="w-24 text-center text-sm font-bold bg-[#001609] text-white py-1 rounded-b-md drop-shadow-lg">LOG-IN</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-sm hidden md:flex items-center space-x-8">
-                    <a href="../pages/news_articles.html" class="text-white hover:underline">News & Articles</a>
-                    <a href="../pages/publications.html" class="text-white hover:underline">Publications</a>
-                    <a href="../pages/contactus.html" class="text-white hover:underline">Contact Us</a>
-                </div>
-
-                <div class="absolute inset-y-0 left-0 flex items-center md:hidden">
-                    <button id="menu-toggle" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-green-700 focus:outline-none">
-                        <svg id="icon-open" class="h-6 w-6 block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                        <svg id="icon-close" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <div id="mobile-menu" class="md:hidden hidden bg-white/90 backdrop-blur-sm rounded-b-lg flex-col pt-4 pb-6 space-y-2 text-center transition-all duration-300 ease-in-out">
-                <a href="../pages/aboutus.html" class="block text-gray-800 hover:text-green-700">About Us</a>
-                <a href="../pages/our_members.html" class="block text-gray-800 hover:text-green-700">Our Members</a>
-                <a href="../pages/program_activities.html" class="block text-gray-800 hover:text-green-700">Program & Activities</a>
-                <a href="../pages/news_articles.html" class="block text-gray-800 hover:text-green-700">News & Articles</a>
-                <a href="../pages/publications.html" class="block text-gray-800 hover:text-green-700">Publications</a>
-                <a href="../pages/contactus.html" class="block text-gray-800 hover:text-green-700">Contact Us</a>
-                <a href="../pages/login.html" class="block bg-black text-white py-2 rounded-md mt-2 mx-4">LOG-IN</a>
-            </div>
-        </div>
-    </header> -->
-        <!-- ================= MAIN CONTENT ================= -->
-
-    <header id="navbar" class="bg-main-color fixed top-0 left-0 w-full z-50 transition-colors duration-500 shadow-md">
+    <header id="navbar" class="bg-main-color fixed top-0 left-0 w-full z-50 transition-all duration-500 shadow-md">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
 
-            <!-- Logo -->
             <div class="flex-shrink-0 flex items-center">
-                <a href="index.html" class="flex items-center space-x-2">
-                <img src="assets/images/LogoPRODIKPI.png" alt="PRODIKPI Logo" class="h-10 w-auto">
-                <span class="text-white font-bold text-lg">PRODIKPI</span>
+                <a href="../public/index.html" class="flex items-center space-x-2">
+                    <div class="relative h-10 w-10">
+                        <img id="logo-normal" src="../public/assets/images/PRODIKPI.svg" alt="PRODIKPI Logo" class="absolute inset-0 h-full w-full transition-opacity duration-500 opacity-100">
+                        <img id="logo-white" src="../public/assets/images/PRODIKPI_white.svg" alt="PRODIKPI Logo" class="absolute inset-0 h-full w-full transition-opacity duration-500 opacity-0">
+                    </div>
+                    <span class="text-white font-bold text-lg">PRODIKPI</span>
                 </a>
             </div>
 
-            <!-- Menu Navigasi -->
             <nav class="hidden md:flex space-x-6">
                 <a href="../public/index.html" class="text-white hover:text-yellow-400">Home</a>
                 <a href="../pages/aboutus.html" class="text-white hover:text-yellow-400">About Us</a>
@@ -104,9 +47,10 @@
                 <a href="../pages/news_articles.html" class="text-white hover:text-yellow-400">News & Articles</a>
                 <a href="../pages/publications.html" class="text-white hover:text-yellow-400">Publications</a>
                 <a href="../pages/contactus.html" class="text-white hover:text-yellow-400">Contact Us</a>
+                <a href="../pages/signup.html" class="text-white hover:text-yellow-400">Sign Up</a>
+                <a href="../pages/login.html" class="text-white hover:text-yellow-400">Login</a>
             </nav>
 
-            <!-- Mobile Menu Button -->
             <div class="md:hidden flex items-center">
                 <button id="menu-toggle" class="text-white focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -118,7 +62,6 @@
             </div>
         </div>
 
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-black text-white px-4 pt-2 pb-4 space-y-2">
             <a href="../public/index.html" class="block hover:text-yellow-400">Home</a>
             <a href="../pages/aboutus.html" class="block hover:text-yellow-400">About Us</a>
@@ -134,42 +77,16 @@
 
     <main>
         <section class="relative h-[calc(110vh-114px)] overflow-hidden mt-[60px]" id="hero-section">
-        <!-- ============== HERO SECTION ============== -->
             <div class="absolute inset-0 w-full h-full flex transition-transform duration-500">
                 <div class="w-full h-full flex-shrink-0 bg-cover bg-center" style="background-image: url('assets/images/prodikpi_perbarindo_UGM_2025_1.JPG');"></div>
                 <div class="w-full h-full flex-shrink-0 bg-cover bg-center" style="background-image: url('assets/images/prodikpi_kedutaanRI_malay_2022.jpg');"></div>
                 <div class="w-full h-full flex-shrink-0 bg-cover bg-center" style="background-image: url('assets/images/prodikpi_perbarindo_certif_2023.jpg');"></div>
             </div>
             <div class="absolute inset-0 hero-gradient-overlay"></div>
-            <!-- <div class="relative container mx-auto pr-4 sm:pr-6 lg:pr-8 pl-10 md:pl-16 lg:pl-28 h-full flex flex-col justify-center items-start text-white">
-                <h1 class="text-xl sm:text-2xl md:text-2xl lg:text-5xl font-bold leading-snug md:leading-tight mt-8">
-                    <span lang="en">Welcome to <br><strong>PRODIKPI</strong></span>
-                    <span lang="id">Welcome to <br><strong>PRODIKPI</strong></span>
-                </h1>
-                <p class="text-sm sm:text-base md:text-2xl lg:text-2xl text-left leading-snug md:leading-tight mt-4 max-w-lg">
-                    <span lang="en">PRODIKPI (Association of Indonesian Diploma Programs in Finance and Banking) is a national collaborative program committed to enhancing the quality of vocational education in finance and banking. We support adaptive curriculum development, professional certification, and research collaboration to produce career-ready graduates with global competitiveness.</span>
-                    <span lang="id">PRODIKPI (Perkumpulan Program Diploma Keuangan dan Perbankan Indonesia) adalah program kolaborasi nasional yang berkomitmen meningkatkan mutu pendidikan vokasi di bidang keuangan dan perbankan. Kami mendukung pengembangan kurikulum yang adaptif, sertifikasi profesi, dan kerja sama riset demi mencetak lulusan siap kerja yang berdaya saing global.</span>
-                </p>
-                <div class="mt-8 flex space-x-4">
-                    <a href="#" class="bg-brand-green px-8 py-3 rounded-md font-semibold hover:bg-opacity-80">
-                        <span lang="en">Sign Up</span>
-                        <span lang="id">Sign Up</span>
-                    </a>
-                    <a href="#" class="bg-brand-green px-8 py-3 rounded-md font-semibold hover:bg-opacity-80">
-                        <span lang="en">Log In</span>
-                        <span lang="id">Login</span>
-                    </a>
-                </div> -->
-                <div class="relative container mx-auto px-6 md:px-16 lg:px-28 h-full flex flex-col md:flex-row mt-20
-                justify-center items-start text-white">
-                    <!-- Kiri -->
-                    <!-- <div class="md:w-1/2">
-                        <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold leading-snug md:leading-tight mt-8">
-                            <span lang="en">Welcome to <br><strong>PRODIKPI</strong></span>
-                            <span lang="id">Welcome to <br><strong>PRODIKPI</strong></span>
-                        </h1>
-                    </div> -->
-
+            
+            <div class="relative container mx-auto px-6 md:px-16 lg:px-28 h-full flex flex-col justify-center items-start text-white">
+                
+                <div class="flex flex-col max-w-3xl" data-aos="fade-right">
                     <div class="md:w-1/2 relative">
                         <!-- Accent Line -->
                         <div class="absolute mt-20 left-0 top-1/2-translate-y-1/2 w-1 h-24 bg-brand-green rounded"></div>
@@ -184,24 +101,20 @@
                         </h1>
                     </div>
 
-                    <!-- Kanan -->
-                    <div class="md:w-1/2 md:pl-8 mt-6 md:mt-8">
-                        <p class="mt-10 font-bold text-sm sm:text-base md:text-lg lg:text-2xl text-justify leading-snug md:leading-relaxed max-w-lg">
-                            <span lang="en">PRODIKPI (Association of Indonesian Diploma Programs in Finance and Banking) is a national collaborative program committed to enhancing the quality of vocational education in finance and banking. </span>
-                            <span lang="id">PRODIKPI (Perkumpulan Program Diploma Keuangan dan Perbankan Indonesia) adalah program kolaborasi nasional yang berkomitmen meningkatkan mutu pendidikan vokasi di bidang keuangan dan perbankan.</span>
-                        </p>
+                    <p class="mt-6 font-bold text-sm sm:text-base md:text-lg lg:text-xl text-left leading-snug md:leading-relaxed">
+                        <span lang="en">PRODIKPI (Association of Indonesian Diploma Programs in Finance and Banking) is a national collaborative program committed to enhancing the quality of vocational education in finance and banking. </span>
+                        <span lang="id">PRODIKPI (Perkumpulan Program Diploma Keuangan dan Perbankan Indonesia) adalah program kolaborasi nasional yang berkomitmen meningkatkan mutu pendidikan vokasi di bidang keuangan dan perbankan.</span>
+                    </p>
 
-                        <!-- Tombol -->
-                        <div class="mt-8 flex space-x-4">
-                            <a href="#" class="bg-brand-green px-8 py-3 rounded-md font-semibold hover:bg-opacity-80">
-                                <span lang="en">Sign Up</span>
-                                <span lang="id">Sign Up</span>
-                            </a>
-                            <a href="#" class="bg-brand-green px-8 py-3 rounded-md font-semibold hover:bg-opacity-80">
-                                <span lang="en">Log In</span>
-                                <span lang="id">Login</span>
-                            </a>
-                        </div>
+                    <div class="mt-8 flex space-x-4">
+                        <a href="#" class="bg-brand-green px-8 py-3 rounded-md font-semibold hover:bg-opacity-80">
+                            <span lang="en">Sign Up</span>
+                            <span lang="id">Sign Up</span>
+                        </a>
+                        <a href="#" class="bg-brand-green px-8 py-3 rounded-md font-semibold hover:bg-opacity-80">
+                            <span lang="en">Log In</span>
+                            <span lang="id">Login</span>
+                        </a>
                     </div>
                 </div>
 
@@ -213,39 +126,17 @@
             </div>
         </section>
         <section style="background: linear-gradient(to right, #099c41, #39e07c);">
-        <!-- ============== ABOUT, VISION, MISSION SECTION ============== -->
-
-            <section id="about" class="py-16 lg:py-24">
+        <section id="about" class="py-16 lg:py-24">
                 <div class="container mx-auto px-6 md:px-12 lg:px-24 space-y-20">
-
-                    <!-- <div class="flex flex-col md:flex-row items-center justify-between gap-12">
-                        <div class="md:w-1/2">
-                            <div class="bg-black/20 shadow-lg p-8 rounded-lg backdrop-blur-sm">
-                                <h2 class="text-3xl font-bold mb-4 text-white">
-                                    <span lang="en">About PRODIKPI</span>
-                                    <span lang="id">About PRODIKPI</span>
-                                </h2>
-                                <p class="text-white leading-relaxed">
-                                    <span lang="en"><strong>PRODIKPI</strong> (Association of Indonesian Diploma Programs in Finance and Banking) is a national initiative to improve the quality and relevance of vocational education in the finance and banking sector. We promote standardized yet flexible curricula, support professional certification, strengthen collaboration in research and community service, and foster innovative learning. PRODIKPI bridges the gap between education and workforce needs in the era of digital transformation, positioning diploma programs as competitive, career-ready options in the financial industry.</span>
-                                    <span lang="id"><strong>PRODIKPI</strong> (Perkumpulan Program Diploma Keuangan dan Perbankan Indonesia) merupakan inisiatif nasional untuk meningkatkan kualitas dan relevansi pendidikan vokasi di bidang keuangan dan perbankan. Kami mendorong kurikulum yang terstandar namun fleksibel, mendukung sertifikasi profesi, memperkuat kolaborasi dalam riset dan pengabdian kepada masyarakat, serta mendorong pembelajaran inovatif. PRODIKPI menjembatani kebutuhan dunia pendidikan dan dunia kerja di era transformasi digital, menjadikan program diploma sebagai pilihan kompetitif bagi lulusan yang siap berkarier di sektor keuangan.</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="md:w-1/2 flex justify-center">
-                            <img src="assets/images/LogoPRODIKPI.png" alt="PRODIKPI Logo" class="max-h-80 object-contain" />
-                        </div>
-                    </div> -->
 
                     <div class="container mx-auto px-6 lg:px-20">
                         <div class="flex flex-col md:flex-row items-center gap-12">
 
-                            <!-- Gambar/Ilustrasi -->
-                            <div class="md:w-1/2 flex justify-center">
+                            <div class="md:w-1/2 flex justify-center" data-aos="fade-right">
                                 <img src="assets/images/LogoPRODIKPI.png" alt="Prodikpi Logo" class="w-32 sm:w-40 md:w-56 lg:w-72 xl:w-96">
                             </div>
 
-                            <!-- Konten Teks -->
-                            <div class="md:w-1/2 text-gray-800 leading-relaxed">
+                            <div class="md:w-1/2 text-gray-800 leading-relaxed" data-aos="fade-left">
                                 <h2 class="font-bold text-white text-3xl md:text-4xl font-extrabold mb-6 text-teal-600">
                                 About PRODIKPI
                                 </h2>
@@ -269,23 +160,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="flex flex-col md:flex-row items-stretch gap-8">
-                        <div id="vision-image-card" class="w-full md:w-2/5 relative">
-                            <img src="assets/images/prodikpi_plakat.jpg" alt="Collaborative discussion" class="w-full h-full object-cover rounded-lg shadow-xl" />
-                            <h2 class="absolute bottom-4 left-6 text-6xl font-extrabold text-white z-10">
-                                <span lang="en">VISION</span>
-                                <span lang="id">VISI</span>
-                            </h2>
-                        </div>
-                        <div class="w-full md:w-3/5 bg-black/20 shadow-lg p-8 rounded-lg backdrop-blur-sm flex items-center">
-                            <p class="text-white text-2xl italic leading-relaxed font-medium">
-                                <span lang="en">“To become a leading association of vocational education in finance and banking that is adaptive, innovative, and committed to producing competent graduates with national and global competitiveness.”</span>
-                                <span lang="id">”Menjadi perkumpulan pendidikan vokasi keuangan dan perbankan yang unggul, adaptif, dan inovatif dalam mencetak lulusan kompeten serta berdaya saing di tingkat nasional dan global.”</span>
-                            </p>
-                        </div>
-                    </div> -->
-                    <div class="container mx-auto flex flex-col md:flex-row items-stretch gap-12 bg-white shadow-xl rounded-2xl overflow-hidden">
-                        <!-- Bagian Gambar -->
+                    <div class="container mx-auto flex flex-col md:flex-row items-stretch gap-12 bg-white shadow-xl rounded-2xl overflow-hidden" data-aos="zoom-in">
                         <div class="w-full md:w-2/5 relative">
                             <img src="assets/images/prodikpi_plakat.jpg" alt="Collaborative discussion" class="w-full h-full object-cover">
                             <h2 class="absolute bottom-6 left-6 text-5xl md:text-6xl font-extrabold text-white drop-shadow-lg">
@@ -293,7 +168,6 @@
                                 <span lang="id">VISI</span>
                             </h2>
                         </div>
-                        <!-- Bagian Teks -->
                         <div class="w-full md:w-3/5 flex items-center bg-gradient-to-br from-yellow-50 via-white to-yellow-100 p-10">
                         <p class="text-gray-800 text-xl md:text-2xl italic leading-relaxed font-medium">
                             <span lang="en">“To become a leading association of vocational education in finance and banking that is adaptive, innovative, and committed to producing competent graduates with national and global competitiveness.”</span>
@@ -306,12 +180,12 @@
             </section>
 
             <section class="py-12">
-                <h2 class="text-7xl font-extrabold text-white text-center mb-12">
+                <h2 class="text-7xl font-extrabold text-white text-center mb-12" data-aos="fade-up">
                     <span lang="en">MISSION</span>
                     <span lang="id">MISI</span>
                 </h2>
                 <div class="space-y-8">
-                    <div class="relative overflow-hidden border-t-4 border-b-4 border-green-500">
+                    <div class="relative overflow-hidden border-t-4 border-b-4 border-green-500" data-aos="fade-right">
                         <img src="assets/images/prodikpi_UKI_1.jpg" alt="Mission 1" class="w-full h-60 md:h-72 object-cover object-center" />
                         <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent flex items-center">
                             <p class="container mx-auto px-6 md:px-12 lg:px-24 text-white text-xl md:text-2xl text-left leading-relaxed z-10 font-bold drop-shadow">
@@ -320,7 +194,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="relative overflow-hidden border-t-4 border-b-4 border-green-500">
+                    <div class="relative overflow-hidden border-t-4 border-b-4 border-green-500" data-aos="fade-left">
                         <img src="assets/images/prodikpi_AOU_MoU_2022.jpg" alt="Mission 2" class="w-full h-60 md:h-72 object-cover object-center" />
                         <div class="absolute inset-0 bg-gradient-to-l from-black/70 to-transparent flex items-center">
                             <p class="container mx-auto px-6 md:px-12 lg:px-24 text-white text-xl md:text-2xl text-right leading-relaxed z-10 font-bold drop-shadow">
@@ -329,7 +203,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="relative overflow-hidden border-t-4 border-b-4 border-green-500">
+                    <div class="relative overflow-hidden border-t-4 border-b-4 border-green-500" data-aos="fade-right">
                         <img src="assets/images/prodikpi_perbarindo_certif_2023.jpg" alt="Mission 3" class="w-full h-60 md:h-72 object-cover object-center" />
                         <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent flex items-center">
                             <p class="container mx-auto px-6 md:px-12 lg:px-24 text-white text-xl md:text-2xl text-left leading-relaxed z-10 font-bold drop-shadow">
@@ -338,7 +212,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="relative overflow-hidden border-t-4 border-b-4 border-green-500">
+                    <div class="relative overflow-hidden border-t-4 border-b-4 border-green-500" data-aos="fade-left">
                         <img src="assets/images/prodikpi_upm_2022.jpg" alt="Mission 4" class="w-full h-60 md:h-72 object-cover object-center" />
                         <div class="absolute inset-0 bg-gradient-to-l from-black/70 to-transparent flex items-center">
                             <p class="container mx-auto px-6 md:px-12 lg:px-24 text-white text-xl md:text-2xl text-right leading-relaxed z-10 font-bold drop-shadow">
@@ -347,7 +221,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="relative overflow-hidden border-t-4 border-b-4 border-green-500">
+                    <div class="relative overflow-hidden border-t-4 border-b-4 border-green-500" data-aos="fade-right">
                         <img src="assets/images/prodikpi_perbarindo_UGM_2025_2.JPG" alt="Mission 5" class="w-full h-60 md:h-72 object-cover object-center" />
                         <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent flex items-center">
                             <p class="container mx-auto px-6 md:px-12 lg:px-24 text-white text-xl md:text-2xl text-left leading-relaxed z-10 font-bold drop-shadow">
@@ -359,22 +233,20 @@
                 </div>
             </section>
 
-            <!-- ============== HYMN OF PRODIKPI SECTION ============== -->
             <section class="text-white py-20 relative overflow-hidden">
                 <div class="container mx-auto px-6 text-center relative z-10">
-                    <h2 class="text-4xl font-bold">
+                    <h2 class="text-4xl font-bold" data-aos="fade-up">
                         <span lang="en">Hymn of</span>
                         <span lang="id">Hymne</span>
                     </h2>
-                    <h1 class="text-6xl font-bold mb-8">
+                    <h1 class="text-6xl font-bold mb-8" data-aos="fade-up" data-aos-delay="100">
                         <span lang="en">PRODIKPI</span>
                         <span lang="id">PRODIKPI</span>
                     </h1>
-                    <div class="max-w-4xl mx-auto bg-white/10 rounded-lg p-4">
+                    <div class="max-w-4xl mx-auto bg-white/10 rounded-lg p-4" data-aos="zoom-in">
                         <div class="relative" style="padding-top: 56.25%;">
                             <iframe width="560" height="315" src="https://www.youtube.com/embed/bEoe3luueMM?si=n2TVYe4YOK8tRGDU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="absolute top-0 left-0 w-full h-full rounded-md"></iframe>
                         </div>
-                        <!-- Audio Player for Himne PRODIKPI -->
                         <div class="mt-8 flex flex-col items-center">
                             <audio controls>
                                 <source src="assets/audio/Himne PRODIKPI.mp3" type="audio/mpeg">
@@ -383,16 +255,15 @@
                             <span class="mt-2 text-white text-lg font-semibold">Himne PRODIKPI</span>
                         </div>
                     </div>
-                    <a href="#" class="mt-8 inline-block bg-brand-green text-white px-12 py-4 rounded-md font-semibold hover:bg-black">
+                    <a href="#" class="mt-8 inline-block bg-brand-green text-white px-12 py-4 rounded-md font-semibold hover:bg-black" data-aos="fade-up">
                         <span lang="en">VISIT OUR YOUTUBE CHANNEL</span>
                         <span lang="id">KUNJUNGI KANAL YOUTUBE KAMI</span>
                     </a>
                 </div>
             </section>
 
-            <!-- ============== NEWEST EVENTS SECTION ============== -->
-        <section class="py-16 lg:py-24 bg-gray-100 overflow-x-hidden">
-            <h2 class="text-4xl font-bold text-center text-brand-green mb-16">
+            <section class="py-16 lg:py-24 bg-gray-100 overflow-x-hidden">
+            <h2 class="text-4xl font-bold text-center text-brand-green mb-16" data-aos="fade-up">
                 <span lang="en">NEWEST EVENTS</span>
                 <span lang="id">NEWEST EVENTS</span>
             </h2>
@@ -406,7 +277,7 @@
                     
                     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                         <div class="grid md:grid-cols-2 gap-8 items-center">
-                            <div class="text-white py-8 md:py-16 pr-8">
+                            <div class="text-white py-8 md:py-16 pr-8" data-aos="fade-right">
                                 <h3 class="text-3xl font-bold mb-4">
                                     <span lang="en">National Scientific Discussion Forum</span>
                                     <span lang="id">Forum Diskusi Ilmiah Nasional</span>
@@ -420,7 +291,7 @@
                                     <span lang="id">LIHAT SELENGKAPNYA</span>
                                 </a>
                             </div>
-                            <div class="py-8">
+                            <div class="py-8" data-aos="fade-left">
                                 <img src="assets/images/prodikpi_perbarindo_UGM_2025_5.JPG" alt="A speaker presenting at a 'Sekolah Vokasi' event." class="rounded-lg shadow-2xl w-full h-auto object-cover border-4 border-brand-green">
                             </div>
                         </div>
@@ -435,10 +306,10 @@
                     
                     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                         <div class="grid md:grid-cols-2 gap-8 items-center">
-                            <div class="py-8 order-last md:order-first">
+                            <div class="py-8 order-last md:order-first" data-aos="fade-right">
                                 <img src="assets/images/prodikpi_linkMatch_2025.jpeg" alt="Three presenter in a online seminar" class="rounded-lg shadow-2xl w-full h-auto object-cover border-4 border-brand-green">
                             </div>
-                            <div class="text-white py-8 md:py-16 pl-8 text-right ml-auto">
+                            <div class="text-white py-8 md:py-16 pl-8 text-right ml-auto" data-aos="fade-left">
                                 <h3 class="text-3xl font-bold mb-4">
                                     <span lang="en">Curriculum & Fintech Workshop</span>
                                     <span lang="id">Workshop Kurikulum & Fintech</span>
@@ -465,7 +336,7 @@
 
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-16">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="bg-transparent">
+                        <div class="bg-transparent" data-aos="zoom-in-up">
                             <img src="assets/images/ui_rapatPengurus_2022.jpg" alt="Group photo of event attendees indoors." class="w-full h-56 object-cover rounded-lg shadow-lg">
                             <div class="p-4 text-white">
                                 <h3 class="text-xl font-bold mb-2">
@@ -478,7 +349,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="bg-transparent">
+                        <div class="bg-transparent" data-aos="zoom-in-up" data-aos-delay="150">
                             <img src="assets/images/prodikpi_perbarindo_UGM_2025_3.JPG" alt="Screenshot of a 'Seminar Nasional' video conference call." class="w-full h-56 object-cover rounded-lg shadow-lg">
                             <div class="p-4 text-white">
                                 <h3 class="text-xl font-bold mb-2">
@@ -491,7 +362,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="bg-transparent">
+                        <div class="bg-transparent" data-aos="zoom-in-up" data-aos-delay="300">
                             <img src="assets/images/prodikpi_perbarindo_2023.png" alt="Group photo in front of the 'Gedung Administrasi & Laboratorium Vokasi' building." class="w-full h-56 object-cover rounded-lg shadow-lg">
                             <div class="p-4 text-white">
                                 <h3 class="text-xl font-bold mb-2">
@@ -509,8 +380,7 @@
             </div>
         </section>
 
-        <!-- ============== OUR MEMBERS (SWIPER) SECTION ============== -->
-        <section class="w-full relative text-white h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
+        <section class="w-full relative text-white h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden" data-aos="fade-in">
                 <div class="swiper swiper-member h-full w-full">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide w-full relative h-full" data-university-name='{"en":"UNIVERSITAS<br>INDONESIA", "id":"UNIVERSITAS<br>INDONESIA"}'>
@@ -562,11 +432,10 @@
                 </div>
             </section>
 
-            <!-- ============== TESTIMONIES SECTION ============== -->
             <section class="py-16 lg:py-24 testimonies-gradient-bg">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-white relative">
 
-                    <div class="flex items-center justify-center gap-8 mb-12">
+                    <div class="flex items-center justify-center gap-8 mb-12" data-aos="fade-up">
                         <div class="swiper-button-prev-custom text-white text-4xl font-bold cursor-pointer select-none">&lt;</div>
                         <h2 class="text-5xl font-bold">
                             <span lang="en">Testimonies</span>
@@ -577,7 +446,7 @@
                     
                     <div class="swiper swiper-testimonies overflow-hidden">
                         <div class="swiper-wrapper pb-8">
-                            <div class="swiper-slide">
+                            <div class="swiper-slide" data-aos="zoom-in">
                                 <div class="liquid-glass-card-dark rounded-lg p-6 h-full">
                                     <p class="italic mb-4 text-lg">
                                         <span lang="en">“Joining PRODIKPI has provided us with an excellent opportunity to expand networks, develop joint curricula, and ensure graduates are work-ready.”</span>
@@ -595,7 +464,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
+                            <div class="swiper-slide" data-aos="zoom-in" data-aos-delay="150">
                                 <div class="liquid-glass-card-dark rounded-lg p-6 h-full">
                                     <p class="italic mb-4 text-lg">
                                         <span lang="en">“Collaboration in PRODIKPI helps us understand industry needs and respond quickly through innovative learning.”</span>
@@ -613,7 +482,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
+                            <div class="swiper-slide" data-aos="zoom-in" data-aos-delay="300">
                                 <div class="liquid-glass-card-dark rounded-lg p-6 h-full">
                                     <p class="italic mb-4 text-lg">
                                         <span lang="en">“Through PRODIKPI, we can organize joint training and certifications recognized nationally.”</span>
@@ -636,10 +505,9 @@
                 </div>
             </section>
 
-        <!-- ============== PUBLICATIONS SECTION ============== -->
         <section id="publications" class="py-16 lg:py-24 bg-gradient-to-b from-white to-green-50">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col md:flex-row justify-between items-center mb-12">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-12" data-aos="fade-up">
                     <h2 class="text-4xl font-bold text-brand-dark mb-4 md:mb-0">
                         <span lang="en">Publications</span>
                         <span lang="id">Publikasi</span>
@@ -653,7 +521,7 @@
 
                 <div class="h-[700px] overflow-y-auto custom-scrollbar pr-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-40 pt-2">
-                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col flex-shrink-0">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col flex-shrink-0" data-aos="fade-up">
                             <img src="https://placehold.co/600x400/026F2C/FFFFFF?text=Publication" alt="Publication Image" class="w-full h-48 object-cover">
                             <div class="p-6 flex flex-col flex-grow">
                                 <h3 class="text-xl font-bold text-brand-dark mb-2">
@@ -670,7 +538,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col flex-shrink-0">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col flex-shrink-0" data-aos="fade-up" data-aos-delay="150">
                             <img src="https://placehold.co/600x400/0F3D3E/FFFFFF?text=Research" alt="Publication Image" class="w-full h-48 object-cover">
                             <div class="p-6 flex flex-col flex-grow">
                                 <h3 class="text-xl font-bold text-brand-dark mb-2">
@@ -687,7 +555,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col flex-shrink-0">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col flex-shrink-0" data-aos="fade-up" data-aos-delay="300">
                             <img src="https://placehold.co/600x400/1A5D1A/FFFFFF?text=Journal" alt="Publication Image" class="w-full h-48 object-cover">
                             <div class="p-6 flex flex-col flex-grow">
                                 <h3 class="text-xl font-bold text-brand-dark mb-2">
@@ -704,7 +572,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col flex-shrink-0">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col flex-shrink-0" data-aos="fade-up">
                             <img src="https://placehold.co/600x400/026F2C/FFFFFF?text=Article" alt="Publication Image" class="w-full h-48 object-cover">
                             <div class="p-6 flex flex-col flex-grow">
                                 <h3 class="text-xl font-bold text-brand-dark mb-2">
@@ -721,7 +589,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col flex-shrink-0">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col flex-shrink-0" data-aos="fade-up" data-aos-delay="150">
                             <img src="https://placehold.co/600x400/0F3D3E/FFFFFF?text=Report" alt="Publication Image" class="w-full h-48 object-cover">
                             <div class="p-6 flex flex-col flex-grow">
                                 <h3 class="text-xl font-bold text-brand-dark mb-2">
@@ -744,13 +612,12 @@
         </section>
         </main>
 
-    <!-- ================= FOOTER SECTION ================= -->
     <footer>
         <div class="newsletter-wrapper">
             <div class="newsletter-layer newsletter-layer-1"></div>
             <div class="newsletter-layer newsletter-layer-2"></div>
             <div class="newsletter-layer newsletter-layer-3"></div>
-            <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white py-20 z-10">
+            <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white py-20 z-10" data-aos="fade-up">
                 <p class="text-lg font-semibold">
                     <span lang="en">Want to be more informed?</span>
                     <span lang="id">Ingin tahu lebih lanjut?</span>
@@ -776,7 +643,7 @@
         </div>
 
         <div class="member-banner text-white">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row justify-between items-center relative z-10">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row justify-between items-center relative z-10" data-aos="fade-up">
                 <h3 class="text-3xl font-bold mb-4 md:mb-0">
                     <span lang="en">Be a member now!</span>
                     <span lang="id">Jadi anggota sekarang!</span>
@@ -796,14 +663,12 @@
 
         <div id="contact" class="text-white py-12">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Column 1: Address & Contacts -->
-                <div class="md:col-span-1">
+                <div class="md:col-span-1" data-aos="fade-up">
                     <p class="mb-4">Address will be inserted here</p>
                     <p>Quick Contacts will be inserted here</p>
                 </div>
 
-                <!-- Column 2 & 3: Links -->
-                <div class="md:col-span-2 grid grid-cols-2 gap-8">
+                <div class="md:col-span-2 grid grid-cols-2 gap-8" data-aos="fade-up" data-aos-delay="150">
                     <nav class="flex flex-col space-y-2">
                         <a href="../pages/aboutus.html" class="hover:underline">About Us</a>
                         <a href="../pages/our_members.html" class="hover:underline">Our Members</a>
@@ -816,8 +681,7 @@
                     </nav>
                 </div>
 
-                <!-- Column 4: Logo & Socials -->
-                <div class="md:col-span-1 flex justify-start md:justify-end items-center">
+                <div class="md:col-span-1 flex justify-start md:justify-end items-center" data-aos="fade-up" data-aos-delay="300">
                     <div class="flex flex-col space-y-4 mr-4">
                         <a href="#" aria-label="Facebook" class="hover:opacity-75">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.59 0 0 .59 0 1.325v21.35C0 23.41.59 24 1.325 24H12.82v-9.29H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h5.713c.735 0 1.325-.59 1.325-1.325V1.325C24 .59 23.41 0 22.675 0z"/></svg>
@@ -832,21 +696,20 @@
                              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.585-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.585-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.585.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163C8.74 0 8.333.011 7.053.069 2.59.284.284 2.59.069 7.053.011 8.333 0 8.74 0 12s.011 3.667.069 4.947c.215 4.46 2.525 6.765 7.004 6.98C8.333 23.989 8.74 24 12 24s3.667-.011 4.947-.069c4.46-.215 6.765-2.525 6.98-7.004.058-1.28.069-1.687.069-4.947s-.011-3.667-.069-4.947C21.72 2.59 19.42.284 14.947.069 13.667.011 13.26 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
                         </a>
                     </div>
-                    <img href="../public/index.html" src="assets/images/LogoPRODIKPI.png" alt="PRODIKPI Logo" class="h-20 bg-white p-2 rounded-md">
+                    <img href="../public/index.html" src="../public/assets/images/LogoPRODIKPI.png" alt="PRODIKPI Logo" class="h-20 bg-white p-2 rounded-md">
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- ================= LANGUAGE TOGGLE ================= -->
     <div class="fixed bottom-8 right-8 z-50 flex items-center bg-black/50 text-white font-semibold space-x-3 px-4 py-2 rounded-full backdrop-blur-sm shadow-lg">
         <button id="lang-toggle-en" class="lang-toggle">EN</button>
         <span class="opacity-50">|</span>
         <button id="lang-toggle-id" class="lang-toggle">ID</button>
     </div>
 
-    <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

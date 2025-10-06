@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRODIKPI - Programs & Activities</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- SwiperJS CSS for sliders -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <!-- Custom Styles -->
+    <style>
+        html, body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Prevents horizontal scrollbar */
+        }
+        body { font-family: 'Montserrat', sans-serif; background-color: #F7F7F7; }
+        .bg-brand-dark { background-color: #0F3D3E; }
+        .bg-brand-green { background-color: #026F2C; }
+        .text-brand-dark { color: #0F3D3E; }
+        .text-brand-green { color: #026F2C; }
+        .hover\:bg-brand-green-dark:hover { background-color: #014f1f; }
+        .navbar-gradient { background: linear-gradient(to bottom, #026F2C, #23bd60ff);}
+        
+        .member-banner {
+            background: linear-gradient(to right, #02772F, #04DD57);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 -7px 4px 3px rgba(0, 0, 0, 0.1), 0 -5px 4px -1px rgba(0, 0, 0, 0.1);
+            border-bottom: 2px solid #004d21;
+        }
+        #contact {
+            background: linear-gradient(to right, #02772F, #04DD57);
+        }
+
+        /* Custom Swiper styles for this page */
+        .swiper-nav-button {
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 0 1rem;
+            user-select: none;
+        }
+        .swiper-nav-button.swiper-button-disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        /* Style for memorable moments text transition */
+        #moment-details {
+            transition: opacity 0.4s ease-in-out;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- ============== START: HEADER (Copied from welcome.php) ============== -->
+    <header class="navbar-gradient sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center items-center h-[114px] relative space-x-16">
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../pages/aboutus.html" class="text-white hover:underline">About Us</a>
+                    <a href="../pages/our_members.html" class="text-white hover:underline">Our Members</a>
+                    <a href="../pages/program_activities.html" class="text-white hover:underline font-bold">Program & Activities</a>
+                </div>
+
+                <div class="flex justify-center items-stretch h-[114px] relative">
+                    <div class="flex-shrink-0">
+                        <div class="flex flex-col items-center h-full">
+                            <div class="bg-white w-24 flex-grow flex items-center justify-center p-2 shadow-lg">
+                                <a href="../public/index.html">
+                                    <img src="../public/assets/images/LogoPRODIKPI.png" alt="PRODIKPI Logo" class="w-full h-full object-contain">
+                                </a>
+                            </div>
+                            <a href="../pages/login.html" class="w-24 text-center text-sm font-bold bg-[#001609] text-white py-1 rounded-b-md drop-shadow-lg">LOG-IN</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../pages/news_articles.html" class="text-white hover:underline">News & Articles</a>
+                    <a href="../pages/publications.html" class="text-white hover:underline">Publications</a>
+                    <a href="../pages/contactus.html" class="text-white hover:underline">Contact Us</a>
+                </div>
+
+                <div class="absolute inset-y-0 left-0 flex items-center md:hidden">
+                    <button id="menu-toggle" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-green-700 focus:outline-none">
+                        <svg id="icon-open" class="h-6 w-6 block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg id="icon-close" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="md:hidden hidden bg-white/90 backdrop-blur-sm rounded-b-lg flex-col pt-4 pb-6 space-y-2 text-center transition-all duration-300 ease-in-out">
+                <a href="../pages/aboutus.html" class="block text-gray-800 hover:text-green-700">About Us</a>
+                <a href="../pages/our_members.html" class="block text-gray-800 hover:text-green-700">Our Members</a>
+                <a href="../pages/program_activities.html" class="block text-gray-800 hover:text-green-700">Program & Activities</a>
+                <a href="../pages/news_articles.html" class="block text-gray-800 hover:text-green-700">News & Articles</a>
+                <a href="../pages/publications.html" class="block text-gray-800 hover:text-green-700">Publications</a>
+                <a href="../pages/contactus.html" class="block text-gray-800 hover:text-green-700">Contact Us</a>
+                <a href="../pages/login.html" class="block bg-black text-white py-2 rounded-md mt-2 mx-4">LOG-IN</a>
+            </div>
+        </div>
+    </header>
+    <!-- ============== END: HEADER ============== -->
+
+    <!-- ============== START: MAIN CONTENT ============== -->
+    <main>
+        <!-- Seminars Section -->
+        <section class="py-12">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-5xl font-extrabold text-black text-center mb-8">SEMINARS</h2>
+                <div class="bg-brand-green rounded-lg p-6 relative">
+                    <div class="swiper seminars-swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Slide 1 -->
+                            <div class="swiper-slide">
+                                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                                    <img src="https://placehold.co/400x300/a3e635/14532d?text=Seminar+1" alt="Seminar Event 1" class="w-full h-48 object-cover">
+                                    <div class="p-4">
+                                        <h3 class="font-bold text-lg">Event 1</h3>
+                                        <p class="text-gray-600 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 2 -->
+                             <div class="swiper-slide">
+                                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                                    <img src="https://placehold.co/400x300/86efac/166534?text=Seminar+2" alt="Seminar Event 2" class="w-full h-48 object-cover">
+                                    <div class="p-4">
+                                        <h3 class="font-bold text-lg">Event 2</h3>
+                                        <p class="text-gray-600 text-sm">Praesent sapien massa, convallis a pellentesque nec.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 3 -->
+                             <div class="swiper-slide">
+                                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                                    <img src="https://placehold.co/400x300/4ade80/15803d?text=Seminar+3" alt="Seminar Event 3" class="w-full h-48 object-cover">
+                                    <div class="p-4">
+                                        <h3 class="font-bold text-lg">Event 3</h3>
+                                        <p class="text-gray-600 text-sm">Sed porttitor lectus nibh. Curabitur aliquet quam id dui.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Add more slides as needed -->
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev-seminars swiper-nav-button absolute top-1/2 left-0 transform -translate-y-1/2 z-10">&lt;</div>
+                    <div class="swiper-button-next-seminars swiper-nav-button absolute top-1/2 right-0 transform -translate-y-1/2 z-10">&gt;</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Training Section -->
+        <section class="py-12">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-5xl font-extrabold text-black text-center mb-8">TRAINING</h2>
+                <div class="bg-brand-green rounded-lg p-6 relative">
+                    <div class="swiper training-swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Slide 1 -->
+                            <div class="swiper-slide">
+                                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                                    <img src="https://placehold.co/400x300/22c55e/16a34a?text=Training+1" alt="Training Event 1" class="w-full h-48 object-cover">
+                                    <div class="p-4">
+                                        <h3 class="font-bold text-lg">Event 1</h3>
+                                        <p class="text-gray-600 text-sm">Donec sollicitudin molestie malesuada. Vestibulum ac diam.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 2 -->
+                             <div class="swiper-slide">
+                                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                                    <img src="https://placehold.co/400x300/10b981/047857?text=Training+2" alt="Training Event 2" class="w-full h-48 object-cover">
+                                    <div class="p-4">
+                                        <h3 class="font-bold text-lg">Event 2</h3>
+                                        <p class="text-gray-600 text-sm">Mauris blandit aliquet elit, eget tincidunt nibh pulvinar.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 3 -->
+                             <div class="swiper-slide">
+                                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                                    <img src="https://placehold.co/400x300/0d9488/0f766e?text=Training+3" alt="Training Event 3" class="w-full h-48 object-cover">
+                                    <div class="p-4">
+                                        <h3 class="font-bold text-lg">Event 3</h3>
+                                        <p class="text-gray-600 text-sm">Nulla quis lorem ut libero malesuada feugiat.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Add more slides as needed -->
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev-training swiper-nav-button absolute top-1/2 left-0 transform -translate-y-1/2 z-10">&lt;</div>
+                    <div class="swiper-button-next-training swiper-nav-button absolute top-1/2 right-0 transform -translate-y-1/2 z-10">&gt;</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- National Meetings Section -->
+        <section class="py-12">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-5xl font-extrabold text-black text-center mb-8">NATIONAL MEETINGS</h2>
+                <div class="bg-brand-green rounded-lg p-6 relative">
+                    <div class="swiper meetings-swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Slide 1 -->
+                            <div class="swiper-slide">
+                                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                                    <img src="https://placehold.co/400x300/06b6d4/155e75?text=Meeting+1" alt="Meeting Event 1" class="w-full h-48 object-cover">
+                                    <div class="p-4">
+                                        <h3 class="font-bold text-lg">Event 1</h3>
+                                        <p class="text-gray-600 text-sm">Vivamus suscipit tortor eget felis porttitor volutpat.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 2 -->
+                             <div class="swiper-slide">
+                                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                                    <img src="https://placehold.co/400x300/0891b2/164e63?text=Meeting+2" alt="Meeting Event 2" class="w-full h-48 object-cover">
+                                    <div class="p-4">
+                                        <h3 class="font-bold text-lg">Event 2</h3>
+                                        <p class="text-gray-600 text-sm">Curabitur non nulla sit amet nisl tempus convallis quis.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 3 -->
+                             <div class="swiper-slide">
+                                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                                    <img src="https://placehold.co/400x300/0e7490/285363?text=Meeting+3" alt="Meeting Event 3" class="w-full h-48 object-cover">
+                                    <div class="p-4">
+                                        <h3 class="font-bold text-lg">Event 3</h3>
+                                        <p class="text-gray-600 text-sm">Pellentesque in ipsum id orci porta dapibus.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Add more slides as needed -->
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev-meetings swiper-nav-button absolute top-1/2 left-0 transform -translate-y-1/2 z-10">&lt;</div>
+                    <div class="swiper-button-next-meetings swiper-nav-button absolute top-1/2 right-0 transform -translate-y-1/2 z-10">&gt;</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Memorable Moments Section -->
+        <section class="my-12">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="w-full relative text-white h-96 overflow-hidden rounded-lg shadow-xl">
+                    <!-- Static Content (Overlay) -->
+                    <div class="absolute inset-0 flex flex-col justify-center p-8 md:p-12 z-20 pointer-events-none bg-black bg-opacity-50">
+                        <h3 class="text-2xl font-semibold">Memorable Moments</h3>
+                        <div id="moment-details">
+                            <!-- JS will populate this -->
+                            <h2 class="text-5xl font-extrabold my-2">RAKERNAS PRODIKPI 2024</h2>
+                            <p class="text-xl font-bold mb-6">15 JULY 2024</p>
+                        </div>
+                        <a href="#" id="moment-learn-more" class="bg-black text-white font-bold py-3 px-6 rounded-md hover:bg-gray-800 transition pointer-events-auto self-start">LEARN MORE ></a>
+                    </div>
+
+                    <!-- Swiper for Backgrounds -->
+                    <div class="swiper memorable-moments-swiper h-full w-full">
+                        <div class="swiper-wrapper">
+                            <!-- Slide 1 -->
+                            <div class="swiper-slide w-full h-full"
+                                 data-event-name="RAKERNAS PRODIKPI 2024"
+                                 data-event-date="15 JULY 2024"
+                                 data-learn-more-link="#">
+                                <img src="https://placehold.co/1200x400/047857/ffffff?text=Memorable+Moment+1" class="w-full h-full object-cover" alt="Memorable Moment 1" />
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="swiper-slide w-full h-full"
+                                 data-event-name="SEMINAR NASIONAL"
+                                 data-event-date="22 AUGUST 2024"
+                                 data-learn-more-link="#">
+                                <img src="https://placehold.co/1200x400/15803d/ffffff?text=Memorable+Moment+2" class="w-full h-full object-cover" alt="Memorable Moment 2" />
+                            </div>
+                            <!-- Slide 3 -->
+                            <div class="swiper-slide w-full h-full"
+                                 data-event-name="WORKSHOP KURIKULUM"
+                                 data-event-date="05 SEPTEMBER 2024"
+                                 data-learn-more-link="#">
+                                <img src="https://placehold.co/1200x400/166534/ffffff?text=Memorable+Moment+3" class="w-full h-full object-cover" alt="Memorable Moment 3" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Documentation Section -->
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-5xl font-extrabold text-black">Documentation</h2>
+                    <a href="#" class="bg-brand-green text-white font-bold py-2 px-5 rounded-md hover:bg-brand-green-dark transition">SEARCH MORE ></a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Doc Item 1 -->
+                    <div class="doc-item">
+                        <h3 class="text-xl font-bold mb-2">Documentation 1</h3>
+                        <p class="text-gray-600 mb-4">Body text for whatever you'd like to claim. Add main takeaway points, quotes, anecdotes, or even a very very short story.</p>
+                        <div class="flex space-x-2">
+                            <a href="#" class="bg-brand-green text-white text-sm font-medium mr-2 px-4 py-1 rounded hover:bg-brand-green-dark">Read</a>
+                            <a href="#" class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded hover:bg-gray-300">Download</a>
+                        </div>
+                    </div>
+                    <!-- Doc Item 2 -->
+                    <div class="doc-item">
+                        <h3 class="text-xl font-bold mb-2">Documentation 2</h3>
+                        <p class="text-gray-600 mb-4">Body text for whatever you'd like to claim. Add main takeaway points, quotes, anecdotes, or even a very very short story.</p>
+                         <div class="flex space-x-2">
+                            <a href="#" class="bg-brand-green text-white text-sm font-medium mr-2 px-4 py-1 rounded hover:bg-brand-green-dark">Read</a>
+                            <a href="#" class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded hover:bg-gray-300">Download</a>
+                        </div>
+                    </div>
+                    <!-- Doc Item 3 -->
+                    <div class="doc-item">
+                        <h3 class="text-xl font-bold mb-2">Documentation 3</h3>
+                        <p class="text-gray-600 mb-4">Body text for whatever you'd like to claim. Add main takeaway points, quotes, anecdotes, or even a very very short story.</p>
+                         <div class="flex space-x-2">
+                            <a href="#" class="bg-brand-green text-white text-sm font-medium mr-2 px-4 py-1 rounded hover:bg-brand-green-dark">Read</a>
+                            <a href="#" class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded hover:bg-gray-300">Download</a>
+                        </div>
+                    </div>
+                    <!-- Doc Item 4 -->
+                    <div class="doc-item">
+                        <h3 class="text-xl font-bold mb-2">Documentation 4</h3>
+                        <p class="text-gray-600 mb-4">Body text for whatever you'd like to claim. Add main takeaway points, quotes, anecdotes, or even a very very short story.</p>
+                         <div class="flex space-x-2">
+                            <a href="#" class="bg-brand-green text-white text-sm font-medium mr-2 px-4 py-1 rounded hover:bg-brand-green-dark">Read</a>
+                            <a href="#" class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded hover:bg-gray-300">Download</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center space-x-2 mt-12">
+                    <button class="w-3 h-3 bg-brand-green rounded-full"></button>
+                    <button class="w-3 h-3 bg-gray-300 rounded-full"></button>
+                    <button class="w-3 h-3 bg-gray-300 rounded-full"></button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <!-- ============== END: MAIN CONTENT ============== -->
+    
+    <!-- ============== START: FOOTER (Copied from welcome.php) ============== -->
+    <footer>
+        <!-- Be a Member Banner -->
+        <div class="member-banner text-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row justify-between items-center relative z-10">
+                <h3 class="text-3xl font-bold mb-4 md:mb-0">Be a member now!</h3>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="bg-brand-green font-semibold px-6 py-2 rounded-md hover:bg-black transition">Sign Up</a>
+                    <a href="#" class="bg-brand-green font-semibold px-6 py-2 rounded-md hover:bg-black hover:text-white transition">I Already Have An Account</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Footer -->
+        <div id="contact" class="text-white py-12">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Column 1: Address & Contacts -->
+                <div class="md:col-span-1">
+                    <p class="mb-4">Address will be inserted here</p>
+                    <p>Quick Contacts will be inserted here</p>
+                </div>
+
+                <!-- Column 2 & 3: Links -->
+                <div class="md:col-span-2 grid grid-cols-2 gap-8">
+                    <nav class="flex flex-col space-y-2">
+                        <a href="../pages/aboutus.html" class="hover:underline">About Us</a>
+                        <a href="../pages/our_members.html" class="hover:underline">Our Members</a>
+                        <a href="../pages/program_activities.html" class="hover:underline">Programs & Activities</a>
+                    </nav>
+                    <nav class="flex flex-col space-y-2">
+                        <a href="../pages/news_articles.html" class="hover:underline">News & Articles</a>
+                        <a href="../pages/publications.html" class="hover:underline">Publications</a>
+                        <a href="../pages/contactus.html" class="hover:underline">Contact Us</a>
+                    </nav>
+                </div>
+
+                <!-- Column 4: Logo & Socials -->
+                <div class="md:col-span-1 flex justify-start md:justify-end items-center">
+                    <div class="flex flex-col space-y-4 mr-4">
+                        <a href="#" aria-label="Facebook" class="hover:opacity-75">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.59 0 0 .59 0 1.325v21.35C0 23.41.59 24 1.325 24H12.82v-9.29H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h5.713c.735 0 1.325-.59 1.325-1.325V1.325C24 .59 23.41 0 22.675 0z"/></svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn" class="hover:opacity-75">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                        </a>
+                        <a href="#" aria-label="YouTube" class="hover:opacity-75">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M21.582,6.186c-0.23-0.854-0.908-1.532-1.762-1.762C18.254,4,12,4,12,4S5.746,4,4.18,4.424 c-0.854,0.23-1.532,0.908-1.762,1.762C2,7.754,2,12,2,12s0,4.246,0.418,5.814c0.23,0.854,0.908,1.532,1.762,1.762 C5.746,20,12,20,12,20s6.254,0,7.82-0.424c0.854-0.23,1.532-0.908,1.762-1.762C22,16.246,22,12,22,12S22,7.754,21.582,6.186z M10,15.464V8.536L16,12L10,15.464z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="hover:opacity-75">
+                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.585-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.585-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.585.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163C8.74 0 8.333.011 7.053.069 2.59.284.284 2.59.069 7.053.011 8.333 0 8.74 0 12s.011 3.667.069 4.947c.215 4.46 2.525 6.765 7.004 6.98C8.333 23.989 8.74 24 12 24s3.667-.011 4.947-.069c4.46-.215 6.765-2.525 6.98-7.004.058-1.28.069-1.687.069-4.947s-.011-3.667-.069-4.947C21.72 2.59 19.42.284 14.947.069 13.667.011 13.26 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+                        </a>
+                    </div>
+                    <img href="../public/index.html" src="../public/assets/images/LogoPRODIKPI.png" alt="PRODIKPI Logo" class="h-20 bg-white p-2 rounded-md">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ============== END: FOOTER ============== -->
+
+    <!-- ============== START: SCRIPTS ============== -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.querySelector('header').querySelector('#mobile-menu');
+        const iconOpen = document.getElementById('icon-open');
+        const iconClose = document.getElementById('icon-close');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            iconOpen.classList.toggle('hidden');
+            iconClose.classList.toggle('hidden');
+        });
+
+        // Shared Swiper options for 3-column sliders
+        const swiperOptions = {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 30,
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                }
+            }
+        };
+
+        // Initialize Swiper for Seminars
+        const seminarsSwiper = new Swiper('.seminars-swiper', {
+            ...swiperOptions,
+            navigation: {
+                nextEl: '.swiper-button-next-seminars',
+                prevEl: '.swiper-button-prev-seminars',
+            },
+        });
+
+        // Initialize Swiper for Training
+        const trainingSwiper = new Swiper('.training-swiper', {
+            ...swiperOptions,
+            navigation: {
+                nextEl: '.swiper-button-next-training',
+                prevEl: '.swiper-button-prev-training',
+            },
+        });
+
+        // Initialize Swiper for Meetings
+        const meetingsSwiper = new Swiper('.meetings-swiper', {
+            ...swiperOptions,
+            navigation: {
+                nextEl: '.swiper-button-next-meetings',
+                prevEl: '.swiper-button-prev-meetings',
+            },
+        });
+        
+        // Initialize Swiper for Memorable Moments
+        const momentsSwiper = new Swiper('.memorable-moments-swiper', {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            on: {
+                slideChange: function () {
+                    const momentDetails = document.getElementById('moment-details');
+                    const learnMoreLink = document.getElementById('moment-learn-more');
+                    if (momentDetails && learnMoreLink) {
+                        const activeSlide = this.slides[this.activeIndex];
+                        const eventName = activeSlide.getAttribute('data-event-name');
+                        const eventDate = activeSlide.getAttribute('data-event-date');
+                        const link = activeSlide.getAttribute('data-learn-more-link');
+
+                        // Add a fade-out/fade-in effect for the text
+                        momentDetails.style.opacity = 0;
+                        setTimeout(() => {
+                            momentDetails.innerHTML = `
+                                <h2 class="text-5xl font-extrabold my-2">${eventName}</h2>
+                                <p class="text-xl font-bold mb-6">${eventDate}</p>
+                            `;
+                            learnMoreLink.href = link;
+                            momentDetails.style.opacity = 1;
+                        }, 200); // Shorter delay for smoother feel
+                    }
+                },
+            },
+        });
+
+    </script>
+    <!-- ============== END: SCRIPTS ============== -->
+    </body>
+</html>

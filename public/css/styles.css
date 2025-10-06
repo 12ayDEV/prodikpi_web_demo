@@ -5,7 +5,7 @@ html, body {
     overflow-x: hidden; /* Prevents horizontal scrollbar */
 }
 body { font-family: "Bai Jamjuree", 'Montserrat', 'Plus Jakarta Sans', 'JetBrains mono', monospace ,sans-serif; background-color: #F7F7F7; }
-.bg-main-color { background-color: #04D554; }
+.bg-main-color { background: linear-gradient(to bottom, #026F2C, #23bd60); }
 .bg-brand-dark { background-color: #0F3D3E; }
 .bg-brand-green { background-color: #026F2C; }
 .text-brand-dark { color: #0F3D3E; }
@@ -53,16 +53,25 @@ body { font-family: "Bai Jamjuree", 'Montserrat', 'Plus Jakarta Sans', 'JetBrain
     );
 }
 
+/* === UPDATED GLASSMORPHISM EFFECT === */
 .liquid-glass-card-dark {
-    background: rgba(15, 61, 62, 0.15); /* Dark green tint, from bg-brand-dark */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    background: rgba(15, 61, 62, 0.25); /* Slightly more opaque background */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* For Safari */
     border: 3px solid rgba(0, 22, 9, 0.4);
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Shadow for 3D effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
 }
+
+.liquid-glass-card-dark:hover {
+    transform: translateY(-10px) scale(1.03); /* Lifts and scales the card on hover */
+    box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.45); /* Enhanced shadow on hover */
+}
+
 
 /* === NEW STYLES FOR FOOTER AND NEWSLETTER === */
 .newsletter-wrapper {
